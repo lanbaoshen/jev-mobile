@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 920" role="img" aria-labelledby="diagram-title diagram-description">
+  <title id="diagram-title">jev-mobile 架构</title>
+  <desc id="diagram-description">有界控制循环连接命令行、Jev、经过校验的 UI 工具、Android 与 HarmonyOS 适配器、不可变 UI 快照和人工接管。</desc>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#dee2e6" stroke-width="0.6" opacity="0.45"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#212529" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2b8a3e"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#e67700"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c92a2a"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#087f5b"/>
+    </marker>
+    <style>
+      .title { font: 700 34px ui-rounded, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #1864ab; }
+      .subtitle { font: 18px ui-rounded, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #495057; }
+      .box-title { font: 700 20px ui-rounded, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #212529; }
+      .box-copy { font: 17px ui-rounded, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #343a40; }
+      .flow { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .box { stroke-width: 2.5; filter: url(#shadow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="920" rx="12" fill="#f8f9fa"/>
+  <rect width="1600" height="920" rx="12" fill="url(#grid)"/>
+
+  <text x="60" y="68" class="title">jev-mobile 架构</text>
+  <text x="62" y="104" class="subtitle">有界决策、确定性控制、跨平台适配</text>
+
+  <path class="flow" d="M310 215 H430" stroke="#495057" marker-end="url(#arrow-gray)"/>
+  <path class="flow" d="M760 180 H900" stroke="#2b8a3e" marker-end="url(#arrow-green)"/>
+  <path class="flow" d="M900 250 H760" stroke="#2b8a3e" stroke-dasharray="8 8" marker-end="url(#arrow-green)"/>
+  <path class="flow" d="M595 290 V400" stroke="#e67700" marker-end="url(#arrow-orange)"/>
+  <path class="flow" d="M760 270 V340 H1240 V470 H1290" stroke="#c92a2a" stroke-dasharray="9 8" marker-end="url(#arrow-red)"/>
+  <path class="flow" d="M500 540 L270 680" stroke="#e67700" marker-end="url(#arrow-orange)"/>
+  <path class="flow" d="M690 540 L670 680" stroke="#e67700" marker-end="url(#arrow-orange)"/>
+  <path class="flow" d="M420 750 V860 H920 V500" stroke="#087f5b" marker-end="url(#arrow-teal)"/>
+  <path class="flow" d="M820 720 L990 540" stroke="#087f5b" marker-end="url(#arrow-teal)"/>
+  <path class="flow" d="M920 430 L820 360 L760 260" stroke="#087f5b" stroke-dasharray="8 8" marker-end="url(#arrow-teal)"/>
+
+  <g>
+    <rect class="box" x="60" y="150" width="250" height="130" rx="8" fill="#ffec99" stroke="#e67700"/>
+    <text x="185" y="182" text-anchor="middle" class="box-title">用户 + uvx CLI</text>
+    <text x="185" y="222" text-anchor="middle" class="box-copy">
+      <tspan x="185">目标 • 平台</tspan>
+      <tspan x="185" dy="27">限制 • 阈值</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="430" y="130" width="330" height="160" rx="8" fill="#a5d8ff" stroke="#1864ab" stroke-width="3"/>
+    <text x="595" y="164" text-anchor="middle" class="box-title">AgentLoop</text>
+    <text x="595" y="193" text-anchor="middle" class="box-copy">
+      <tspan x="595">Python 掌控流程</tspan>
+      <tspan x="595" dy="31">观察 → 决策 → 校验 → 执行</tspan>
+      <tspan x="595" dy="27">重试 • 历史 • 停止规则</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="900" y="150" width="280" height="130" rx="8" fill="#b2f2bb" stroke="#2b8a3e"/>
+    <text x="1040" y="182" text-anchor="middle" class="box-title">TypeSafe / Jev</text>
+    <text x="1040" y="222" text-anchor="middle" class="box-copy">
+      <tspan x="1040">有界 Choice + Noul</tspan>
+      <tspan x="1040" dy="27">类型化决策 + 置信度</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="430" y="400" width="330" height="140" rx="8" fill="#ffd8a8" stroke="#e67700"/>
+    <text x="595" y="434" text-anchor="middle" class="box-title">校验 + UI 工具</text>
+    <text x="595" y="474" text-anchor="middle" class="box-copy">
+      <tspan x="595">最新版本 • 目标能力</tspan>
+      <tspan x="595" dy="27">参数范围 • 超时</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="920" y="390" width="320" height="160" rx="8" fill="#96f2d7" stroke="#087f5b"/>
+    <text x="1080" y="424" text-anchor="middle" class="box-title">不可变 UISnapshot</text>
+    <text x="1080" y="463" text-anchor="middle" class="box-copy">
+      <tspan x="1080">当前应用 • 可见静态文本</tspan>
+      <tspan x="1080" dy="27">可操作元素</tspan>
+      <tspan x="1080" dy="27">版本化 • 平台无关</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="1290" y="400" width="250" height="140" rx="8" fill="#ffc9c9" stroke="#c92a2a" stroke-dasharray="9 7"/>
+    <text x="1415" y="434" text-anchor="middle" class="box-title">人工接管</text>
+    <text x="1415" y="474" text-anchor="middle" class="box-copy">
+      <tspan x="1415">高风险或不明确步骤</tspan>
+      <tspan x="1415" dy="27">用户操作后继续</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="120" y="680" width="300" height="140" rx="8" fill="#d3f9d8" stroke="#2b8a3e"/>
+    <text x="270" y="714" text-anchor="middle" class="box-title">Android 适配器</text>
+    <text x="270" y="754" text-anchor="middle" class="box-copy">
+      <tspan x="270">ADB + UIAutomator XML</tspan>
+      <tspan x="270" dy="27">点击 • 滑动 • 输入 • 启动</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect class="box" x="520" y="680" width="300" height="140" rx="8" fill="#eebefa" stroke="#862e9c"/>
+    <text x="670" y="714" text-anchor="middle" class="box-title">HarmonyOS 适配器</text>
+    <text x="670" y="754" text-anchor="middle" class="box-copy">
+      <tspan x="670">HDC + uitest JSON</tspan>
+      <tspan x="670" dy="27">点击 • 滑动 • 输入 • 启动</tspan>
+    </text>
+  </g>
+</svg>
