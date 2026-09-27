@@ -10,20 +10,6 @@ Control Android and HarmonyOS devices with bounded, inspectable natural-language
 
 [Open the editable Excalidraw source](docs/jev-mobile-architecture.excalidraw).
 
-## Demo
-
-### Android
-
-<video src="docs/demos/android-demo.mp4" controls="controls" preload="metadata"></video>
-
-[Open the Android demo video](docs/demos/android-demo.mp4).
-
-### HarmonyOS
-
-<video src="docs/demos/harmonyos-demo.mp4" controls="controls" preload="metadata"></video>
-
-[Open the HarmonyOS demo video](docs/demos/harmonyos-demo.mp4).
-
 ## Highlights
 
 - Android support through ADB and HarmonyOS support through HDC.

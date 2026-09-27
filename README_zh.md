@@ -10,20 +10,6 @@
 
 [打开可编辑的 Excalidraw 源文件](docs/jev-mobile-architecture_zh.excalidraw)。
 
-## 演示
-
-### Android
-
-<video src="docs/demos/android-demo.mp4" controls="controls" preload="metadata"></video>
-
-[直接打开 Android 演示视频](docs/demos/android-demo.mp4)。
-
-### HarmonyOS
-
-<video src="docs/demos/harmonyos-demo.mp4" controls="controls" preload="metadata"></video>
-
-[直接打开 HarmonyOS 演示视频](docs/demos/harmonyos-demo.mp4)。
-
 ## 特性
 
 - 通过 ADB 支持 Android，通过 HDC 支持 HarmonyOS。
