@@ -6,6 +6,10 @@
 
 `jev-mobile` 观察当前 UI 层级，保留可见信息，让 Jev 选择一个类型化动作，根据最新快照校验动作，然后通过 ADB 或 HDC 执行。设备访问、重试、停止规则和副作用始终由确定性的 Python 代码控制。
 
+https://github.com/user-attachments/assets/076bfab8-3d0e-49c8-9f6d-acec0fdbc643
+
+https://github.com/user-attachments/assets/b6538548-2299-4075-8e64-c6003e55e8a7
+
 ![jev-mobile 架构](docs/jev-mobile-architecture_zh.svg)
 
 [打开可编辑的 Excalidraw 源文件](docs/jev-mobile-architecture_zh.excalidraw)。
