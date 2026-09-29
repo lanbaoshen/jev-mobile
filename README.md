@@ -6,6 +6,10 @@ Control Android and HarmonyOS devices with bounded, inspectable natural-language
 
 `jev-mobile` observes the current UI hierarchy, preserves visible information, asks Jev to select one typed action, validates that action against the latest snapshot, and executes it through ADB or HDC. Device access, retries, stopping rules, and side effects remain under deterministic Python control.
 
+https://github.com/user-attachments/assets/076bfab8-3d0e-49c8-9f6d-acec0fdbc643
+
+https://github.com/user-attachments/assets/b6538548-2299-4075-8e64-c6003e55e8a7
+
 ![jev-mobile architecture](docs/jev-mobile-architecture.svg)
 
 [Open the editable Excalidraw source](docs/jev-mobile-architecture.excalidraw).
